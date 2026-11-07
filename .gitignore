@@ -1,0 +1,14 @@
+# Raw system logs - keep private
+logs/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment and secrets
+.env
+*.key
+*.pem
+
+# Temporary files
+*.tmp

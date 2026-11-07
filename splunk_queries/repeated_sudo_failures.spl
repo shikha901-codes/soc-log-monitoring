@@ -1,0 +1,5 @@
+index=main sourcetype=linux_journal "pam_unix(sudo:auth): authentication failure"
+| rex "user=(?<username>\S+)"
+| bin _time span=5m
+| stats count AS failed_attempts by _time username
+| where failed_attempts >= 3
